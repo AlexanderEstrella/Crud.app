@@ -18,9 +18,12 @@ app.set("view engine", "ejs");
 
 //load public
 app.use("/css", express.static(path.resolve(__dirname, "public/css")));
+app.use("/img", express.static(path.resolve(__dirname, "public/img")));
+app.use("/js", express.static(path.resolve(__dirname, "public/js")));
 
+// css/style.css
 app.get("/", (req, res) => {
-  res.send("server is running");
+  res.render("index");
 });
 
 app.listen(PORT, () => {
