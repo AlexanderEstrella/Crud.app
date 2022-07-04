@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const path = require("path");
 
 dotenv.config({ path: "config.env" });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 //log request
 app.use(morgan("tiny"));
 
@@ -20,8 +20,8 @@ app.set("view engine", "ejs");
 app.use("/css", express.static(path.resolve(__dirname, "public/css")));
 app.use("/img", express.static(path.resolve(__dirname, "public/img")));
 app.use("/js", express.static(path.resolve(__dirname, "public/js")));
-
 // css/style.css
+
 app.get("/", (req, res) => {
   res.render("index");
 });
